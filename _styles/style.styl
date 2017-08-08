@@ -1,0 +1,297 @@
+//====================
+// import
+// ===================
+@import ("smart-grid.styl");
+@import ("settings.styl")
+
+//====================
+// code
+// ===================
+#wrapper
+	max-width 1280px
+	margin 0 auto
+	height 100vh
+
+.red
+	background-color: $red !important
+	color $red
+
+.green
+	background-color: $green
+
+header
+	min-height 703px
+
+.wrapper
+	max-width 940px
+	margin 0 auto !important
+	min-height inherit
+	display flex
+	text-align center
+	flex-flow column wrap
+	&-text
+		display flex
+		flex-flow column wrap
+		min-width: 550px
+		min-height 415px
+		margin 0 auto
+		align-items center
+		justify-content center
+		text-transform uppercase
+		&_h3
+			font(12px,Montserrat-Bold,700,$gray)
+			letter-spacing .1rem
+			margin-bottom 20px
+			margin-top: 35px
+		&_h1
+			background-color: transparent !important
+			font-size 48px
+			font-family Montserrat-Regular
+			letter-spacing .1rem
+			line-height 30px
+			margin 20px 0
+		&_p
+			font(18px,PT Sans,400,$gray)
+			width 500px
+			margin 20px 0
+			line-height 30px
+
+
+.firstHeader
+	row-flex()
+	col()
+	min-height 130px
+	align-items center
+	&__logo
+		width 49px
+		height 49px
+		position relative
+		margin 0 25px
+		img
+			position absolute
+			left 50%
+			top 50%
+			margin-left -10px
+			margin-top -14px
+	&__menu
+		col-6()
+		padding 0
+		margin 0 0 0 50px
+		display flex
+		justify-content flex-end
+		a
+			font(12px,PT Sans,400,$white)
+			text-transform uppercase
+			margin 0 15px
+	&__hamburger
+		col-4()
+		margin-left 40px
+		color: $white
+		display flex
+		justify-content flex-end
+		cursor pointer
+		font-size: 24px
+
+.secondHeader
+	min-height calc(703px - 130px)
+	display: flex
+	align-items center
+	justify-content center
+	flex-flow column wrap
+	color: #fff
+	.deerLogo
+		position relative
+		margin 10px 0
+		&:before
+			content ''
+			position absolute
+			border-bottom 1px solid #fff
+			width 25px
+			height 1px
+			top 14px
+			left -33px
+			opacity: .4
+		&:after
+			content ''
+			position absolute
+			border-bottom 1px solid #fff
+			width 25px
+			height 1px
+			top 14px
+			left 28px
+			opacity: .4
+	.fancy-title
+		font(14px,PT Sans,400,$white)
+		text-transform uppercase
+		position relative
+		text-align center
+		margin 10px 0
+	.mainH1
+		position relative
+		font(38px,"Montserrat-Regular",400,$white)
+		text-transform uppercase
+		margin 10px 0
+		&:before
+			content: "ESTD"
+			position absolute
+			top 15px
+			left -44px
+			font(14px,PT Sans,400,$white)
+		&:after
+			content: "2001"
+			position absolute
+			top 15px
+			right -40px
+			font(14px,PT Sans,400,$white)
+
+.para
+	margin 10px 0
+	font(10px,PT Sans,400,$white)
+	text-transform uppercase
+
+.whoWeAre
+	min-height calc(1680px - 703px)
+	background-color: #fff
+
+	.wrapper-blocks
+		display flex
+		width 940px
+		&_box
+			display flex
+			flex-flow column wrap
+			align-items center
+			background-color: $f7;
+			col-4()
+			min-height 420px
+			border: 1px solid #ececec
+			&:nth-child(2) 
+			.red
+				h2
+					width 165px
+					color: #fff
+					margin 0 0 5px 0
+				p
+					color: #fff
+				img
+					margin-bottom 35px
+					margin-top 66px
+			img
+				margin-top 66px
+				margin-bottom 60px
+			h2
+				text-transform: uppercase
+				font(21px,Montserrat-Regular,400,$black)
+			p
+				width 175px
+				margin 5px auto
+				font(14px,PT Sans,400,$gray)
+
+.ourWorks
+	min-height 1045px
+	background-color: $f7
+
+.carousel-indicators
+	bottom: -70px
+	li
+		background-color: #c0c0c0
+		height 30px
+		transform scale(.3)
+		border-radius 50%
+		text-align center
+	.active
+		background-color: #000
+
+.Blog
+	min-height 1045px
+	background-color: #FFF
+	.Blogs
+		display flex
+		.blogbox
+			width 25%
+			border: 1px solid #ececec;
+			text-align left
+			min-height 420px
+			position relative
+			&:nth-child(2)
+				h2
+				p
+					margin-top 35px
+			img
+				max-width 100%
+			h2
+				font(18px,Montserrat-bold,400,$blogBlack)
+				text-transform: uppercase
+				width 70%
+				margin 20px auto 15px auto
+			p
+				font(14px,PT Sans,400,$gray)
+				line-height 22px
+				width 70%
+				margin 5px auto 15px auto
+			h4
+				position absolute
+				bottom 3%
+				left: 14%
+				text-transform: uppercase
+				font(12px,PT Sans,400,#b6b6b6)
+
+.download
+	min-height 100px
+	display flex
+	justify-content center
+	align-items center
+	.dl
+		font(14px,Montserrat-Bold,700,#fff)
+		line-height 30px
+		letter-spacing .2rem
+		text-transform: uppercase
+
+footer
+	min-height 480px
+	background-color: #161218
+	row-flex()
+	col()
+	ul
+		margin 0
+		padding 0
+	.footerBanner
+		display flex
+		justify-content center
+		align-items center
+		col-12()
+		height 80px
+		font(18px,PT Sans,400,$gray)
+		text-transform uppercase
+	.footerMenu
+		min-height 400px
+		display flex
+		flex-wrap wrap
+		justify-content space-around
+		align-items center
+		text-transform uppercase
+		col-6()
+		a
+			font(14px,PT Sans,400,$gray)
+			line-height 24px
+	.footerSocials
+		col-6()
+		min-height 400px
+		display flex
+		flex-flow column wrap
+		justify-content center
+		align-items center
+		font(14px,PT Sans,400,$gray)
+		text-transform: uppercase
+		&-address
+			p
+				margin-bottom: 5px
+				&:last-child
+					padding-bottom 20px
+		&-icons
+			display flex
+			margin-left: -5px
+			li
+				margin 0 15px
+				a
+					font-size: 24px
+					color $gray
