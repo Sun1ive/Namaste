@@ -29,15 +29,18 @@ header
 	display flex
 	text-align center
 	flex-flow column wrap
+	col-xxs-12()
 	&-text
 		display flex
 		flex-flow column wrap
-		min-width: 550px
 		min-height 415px
+		max-width 100%
 		margin 0 auto
 		align-items center
 		justify-content center
 		text-transform uppercase
+		col-xs-10()
+		col-xxs-12()
 		&_h3
 			font(12px,Montserrat-Bold,700,$gray)
 			letter-spacing .1rem
@@ -50,15 +53,18 @@ header
 			letter-spacing .1rem
 			line-height 30px
 			margin 20px 0
+			xs(font-size, 35px)
 		&_p
 			font(18px,PT Sans,400,$gray)
 			width 500px
 			margin 20px 0
 			line-height 30px
+			xs(font-size, 14px)
+			col-xs-11()
 
 
 .firstHeader
-	row-flex()
+	display flex
 	col()
 	min-height 130px
 	align-items center
@@ -75,6 +81,9 @@ header
 			margin-top -14px
 	&__menu
 		col-6()
+		sm(margin-left, 30px)
+		col-sm-7()
+		xs(display, none)
 		padding 0
 		margin 0 0 0 50px
 		display flex
@@ -85,6 +94,11 @@ header
 			margin 0 15px
 	&__hamburger
 		col-4()
+		col-sm-3()
+		col-xs-9()
+		col-xxs-8()
+		sm(margin-left, 10px)
+		xs(margin-right, 30px)
 		margin-left 40px
 		color: $white
 		display flex
@@ -99,6 +113,7 @@ header
 	justify-content center
 	flex-flow column wrap
 	color: #fff
+	col()
 	.deerLogo
 		position relative
 		margin 10px 0
@@ -131,6 +146,7 @@ header
 		font(38px,"Montserrat-Regular",400,$white)
 		text-transform uppercase
 		margin 10px 0
+		xs(font-size, 30px)
 		&:before
 			content: "ESTD"
 			position absolute
@@ -155,8 +171,13 @@ header
 
 	.wrapper-blocks
 		display flex
-		width 940px
+		max-width 940px
+		md(flex-wrap, wrap)
+		xs(flex-flow, column wrap)
 		&_box
+			md(margin, 10px auto)
+			col-md-6()
+			col-xs-12()
 			display flex
 			flex-flow column wrap
 			align-items center
@@ -183,12 +204,18 @@ header
 				font(21px,Montserrat-Regular,400,$black)
 			p
 				width 175px
+				col-xs-10()
+				col-md-9()
 				margin 5px auto
 				font(14px,PT Sans,400,$gray)
 
 .ourWorks
 	min-height 1045px
 	background-color: $f7
+
+#carouselExampleSlidesOnly
+	xs(display, flex)
+	xs(flex-direction, column)
 
 .carousel-indicators
 	bottom: -70px
@@ -201,35 +228,62 @@ header
 	.active
 		background-color: #000
 
+.carousel-item
+	xxs(margin, 0 auto)
+	img
+		xxs(width, 100%)
+	// for row in 2 3 4
+	// 	img:nth-child({row})
+	// 		display none !important
+
+
+			
 .Blog
 	min-height 1045px
 	background-color: #FFF
 	.Blogs
 		display flex
+		md(flex-wrap, wrap)
 		.blogbox
+			display flex
+			flex-flow column wrap
+			align-items center
 			width 25%
+			col-md-6()
+			col-xs-12()
+			md(margin, 10px auto)
 			border: 1px solid #ececec;
 			text-align left
 			min-height 420px
 			position relative
 			&:nth-child(2)
 				h2
+					md(margin, 0 auto)
+					md(margin-top, 80px)
+					sm(margin-top, 50px)
 				p
 					margin-top 35px
+					md(margin, 30px auto)
 			img
 				max-width 100%
+				margin 15px auto
 			h2
+				md(text-align, center)
 				font(18px,Montserrat-bold,400,$blogBlack)
 				text-transform: uppercase
 				width 70%
 				margin 20px auto 15px auto
+				md(margin, 30px auto)
 			p
 				font(14px,PT Sans,400,$gray)
 				line-height 22px
 				width 70%
 				margin 5px auto 15px auto
+				md(text-align, center)
+				md(margin, 10px auto)
 			h4
 				position absolute
+				md(left, 53%)
 				bottom 3%
 				left: 14%
 				text-transform: uppercase
@@ -240,6 +294,7 @@ header
 	display flex
 	justify-content center
 	align-items center
+	text-align center
 	.dl
 		font(14px,Montserrat-Bold,700,#fff)
 		line-height 30px
@@ -258,26 +313,41 @@ footer
 		display flex
 		justify-content center
 		align-items center
-		col-12()
+		text-align center
+		width 100%
 		height 80px
 		font(18px,PT Sans,400,$gray)
 		text-transform uppercase
 	.footerMenu
 		min-height 400px
-		display flex
+		xs(min-height, 250px)
+		row-flex()
+		margin-right 30px
 		flex-wrap wrap
 		justify-content space-around
+		justify-content-xs(center)
 		align-items center
 		text-transform uppercase
 		col-6()
+		xs(width, 100%)
+		xs(margin, 0)
+		&-first
+			xs(margin-right, 20px)
+		&-second
+			xs(margin-left, 20px)
 		a
 			font(14px,PT Sans,400,$gray)
 			line-height 24px
 	.footerSocials
 		col-6()
+		xs(width, 100%)
+		xs(text-align, center)
+		xs(margin-left, 0)
 		min-height 400px
-		display flex
+		xs(min-height, 250px)
+		row-flex()
 		flex-flow column wrap
+		margin-left: 30px
 		justify-content center
 		align-items center
 		font(14px,PT Sans,400,$gray)
@@ -292,6 +362,7 @@ footer
 			margin-left: -5px
 			li
 				margin 0 15px
+				xs(margin, 0 5px)
 				a
 					font-size: 24px
 					color $gray
