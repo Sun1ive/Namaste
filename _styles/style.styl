@@ -11,13 +11,42 @@
 	max-width 1280px
 	margin 0 auto
 	height 100vh
+	position relative
+
+.changeStyle
+	position absolute
+	right 30px
+	top 20px
+	width 50px
+	height 20px
+	display flex
+	.redStyle
+		background-color: $red
+		border-radius 5px
+		width 20px
+		height 20px
+		cursor pointer
+		margin-right: 10px
+	.greenStyle
+		border-radius 5px
+		background-color: $green
+		width 20px
+		height 20px
+		cursor pointer
 
 .red
 	background-color: $red !important
 	color $red
+	transition .3s
+	&:hover
+		color $red
 
 .green
-	background-color: $green
+	background-color: $green !important
+	color $green
+	transition .3s
+	&:hover
+		color $green
 
 header
 	min-height 703px
@@ -92,6 +121,7 @@ header
 			font(12px,PT Sans,400,$white)
 			text-transform uppercase
 			margin 0 15px
+			background-color: transparent !important
 	&__hamburger
 		col-4()
 		col-sm-3()
@@ -105,6 +135,31 @@ header
 		justify-content flex-end
 		cursor pointer
 		font-size: 24px
+		position relative
+		.subMenu
+			display block
+			position absolute
+			top 40px
+			right -8%
+			md(right, -5%)
+			sm(right, -17%)
+			xs(right, -10%)
+			xxs(right, -15%)
+			padding 0
+			margin 0
+			width 80px
+			text-align center
+			background-color: #FFF
+			transition .4s
+			li
+				&:hover
+					background-color: #000
+					a
+						color #fff
+			a
+				font(14px,PT Sans,400,#000)
+				text-transform uppercase
+				line-height 34px
 
 .secondHeader
 	min-height calc(703px - 130px)
@@ -185,7 +240,7 @@ header
 			col-4()
 			min-height 420px
 			border: 1px solid #ececec
-			&:nth-child(2) 
+			&:nth-child(2)
 			.red
 				h2
 					width 165px
@@ -258,6 +313,7 @@ header
 			position relative
 			&:nth-child(2)
 				h2
+					margin-top 35px
 					md(margin, 0 auto)
 					md(margin-top, 80px)
 					sm(margin-top, 50px)
@@ -266,7 +322,7 @@ header
 					md(margin, 30px auto)
 			img
 				max-width 100%
-				margin 15px auto
+				md(margin, 10px auto)
 			h2
 				md(text-align, center)
 				font(18px,Montserrat-bold,400,$blogBlack)
@@ -284,7 +340,7 @@ header
 			h4
 				position absolute
 				md(left, 53%)
-				bottom 3%
+				bottom 0
 				left: 14%
 				text-transform: uppercase
 				font(12px,PT Sans,400,#b6b6b6)
@@ -297,9 +353,32 @@ header
 	text-align center
 	.dl
 		font(14px,Montserrat-Bold,700,#fff)
+		xxs(font-size, 12px)
 		line-height 30px
 		letter-spacing .2rem
 		text-transform: uppercase
+
+
+.scrollTop
+	position fixed
+	width 40px
+	height 40px
+	background:linear-gradient(to bottom, #ccc2a6 5%, #eae0c2 100%)
+	border 2px solid #c0c0c0
+	border-radius 5px
+	bottom 15px
+	right 15px
+	cursor pointer
+	opacity: .3
+	transition .3s
+	&:hover
+		opacity: 1
+	&:after
+		content "\2B06"
+		position absolute
+		top -1px
+		left 11px
+		font-size: 24px
 
 footer
 	min-height 480px
@@ -338,6 +417,7 @@ footer
 		a
 			font(14px,PT Sans,400,$gray)
 			line-height 24px
+			background-color: transparent !important
 	.footerSocials
 		col-6()
 		xs(width, 100%)
@@ -366,3 +446,4 @@ footer
 				a
 					font-size: 24px
 					color $gray
+					background-color: transparent !important

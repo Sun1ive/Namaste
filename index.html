@@ -10,7 +10,6 @@
 <!-- Индексирует страницу -->
 <meta name="robots" content="index,follow">
 
-<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 
 <link rel="stylesheet" href="_libs/normalize.min.css">
 
@@ -25,19 +24,32 @@
 <body>
 
 <div id="wrapper">
+	
+	<div class="changeStyle">
+		<div class="redStyle" @click="isRed"></div>
+		<div class="greenStyle" @click="isGreen"></div>
+	</div>
+	
 	<header style="background-image: url('_img/127H.png')">
 		<div class="firstHeader">
-			<div class="firstHeader__logo red">
+			<div :class=" { red: red, green: green } " class="firstHeader__logo">
 				<img src="_img/deer.png" alt="deer">
 			</div>
 			<ul class="firstHeader__menu">
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Works</a></li>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Contact</a></li>
+				<li><a href="#" :class="{ red: red, green: green }">Home</a></li>
+				<li><a href="#" :class="{ red: red, green: green }">Works</a></li>
+				<li><a href="#" :class="{ red: red, green: green }">About</a></li>
+				<li><a href="#" :class="{ red: red, green: green }">Contact</a></li>
 			</ul>
 			<div class="firstHeader__hamburger">
-				<i class="fa fa-bars" aria-hidden="true"></i>
+				<i class="fa fa-bars" @click="showSub = !showSub">
+					<submenu v-if="showSub" v-cloak>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">Works</a></li>
+						<li><a href="#">About us</a></li>
+						<li><a href="#">Contact</a></li>
+					</submenu>
+				</i>
 			</div>
 		</div>
 		<div class="secondHeader">
@@ -58,7 +70,7 @@
 					<div class="wrapper-text_h3">
 						Who we are
 					</div>
-					<div class="wrapper-text_h1 red">
+					<div :class=" { red: red, green: green } " class="wrapper-text_h1">
 						Hello & Namaste
 					</div>
 					<div class="wrapper-text_p">
@@ -71,7 +83,7 @@
 						<h2>Web Design</h2>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quia aperiam praesentium officia laboriosam voluptatibus qui, aspernatur nisi neque eveniet.</p>
 					</div>
-					<div class="wrapper-blocks_box red">
+					<div :class="{ red: red, green: green }" class="wrapper-blocks_box">
 						<img src="_img/diamond.png" alt="diamond">
 						<h2>Web Development</h2>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quia aperiam praesentium officia laboriosam voluptatibus qui, aspernatur nisi neque eveniet.</p>
@@ -96,7 +108,7 @@
 					<div class="wrapper-text_h3">
 						What we did
 					</div>
-					<div class="wrapper-text_h1 red">
+					<div :class="{ red: red, green: green }" class="wrapper-text_h1">
 						Our Works
 					</div>
 					<div class="wrapper-text_p">
@@ -139,7 +151,7 @@
 					<div class="wrapper-text_h3">
 						Our recent posts
 					</div>
-					<div class="wrapper-text_h1 red">
+					<div :class="{ red: red, green: green }" class="wrapper-text_h1">
 						Recent Blog.
 					</div>
 					<div class="wrapper-text_p">
@@ -178,26 +190,28 @@
 			</div>
 		</section>
 
-		<section class="download red">
+		<section :class="{ red: red, green: green }" class="download">
 			<div class="dl">Download this awesome psd template for free</div>
 		</section>
 	</main>
 
+	<div class="scrollTop"></div>
+
 	<footer>
 		<div class="footerMenu">
 			<ul class="footerMenu-first">
-				<li><a href="#">Home</a></li>
-				<li><a href="#">About us</a></li>
-				<li><a href="#">Blog</a></li>
-				<li><a href="#">Contact</a></li>
-				<li><a href="#">Disclamer</a></li>
+				<li><a href="#" :class="{ red: red, green: green }">Home</a></li>
+				<li><a href="#" :class="{ red: red, green: green }">About us</a></li>
+				<li><a href="#" :class="{ red: red, green: green }">Blog</a></li>
+				<li><a href="#" :class="{ red: red, green: green }">Contact</a></li>
+				<li><a href="#" :class="{ red: red, green: green }">Disclamer</a></li>
 			</ul>
 			<ul class="footerMenu-second">
-				<li><a href="#">Blog</a></li>
-				<li><a href="#">Photography</a></li>
-				<li><a href="#">Freebies</a></li>
-				<li><a href="#">Journal</a></li>
-				<li><a href="#">News</a></li>
+				<li><a href="#" :class="{ red: red, green: green }">Blog</a></li>
+				<li><a href="#" :class="{ red: red, green: green }">Photography</a></li>
+				<li><a href="#" :class="{ red: red, green: green }">Freebies</a></li>
+				<li><a href="#" :class="{ red: red, green: green }">Journal</a></li>
+				<li><a href="#" :class="{ red: red, green: green }">News</a></li>
 			</ul>
 		</div>
 		<div class="footerSocials">
@@ -207,11 +221,16 @@
 				<p>zda carlton place southampton</p>
 			</div>
 			<ul class="footerSocials-icons">
-				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-				<li><a href="#"><i class="fa fa-github"></i></a></li>
-				<li><a href="#"><i class="fa fa-google"></i></a></li>
-				<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+				<li><a href="#" :class="{ red: red, green: green }">
+				<i class="fa fa-facebook"></i></a></li>
+				<li><a href="#" :class="{ red: red, green: green }">
+				<i class="fa fa-twitter"></i></a></li>
+				<li><a href="#" :class="{ red: red, green: green }">
+				<i class="fa fa-github"></i></a></li>
+				<li><a href="#" :class="{ red: red, green: green }">
+				<i class="fa fa-google"></i></a></li>
+				<li><a href="#" :class="{ red: red, green: green }">
+				<i class="fa fa-instagram"></i></a></li>
 			</ul>
 		</div>
 		<div class="footerBanner">copyright &copy; Sunlive 2017</div>
@@ -227,8 +246,10 @@
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
-<!-- <script src="https://unpkg.com/vue"></script> -->
-<!-- <script src="dist/common.min.js"></script> -->
-<script src="_scripts/common.js"></script>
+<script src="https://unpkg.com/vue"></script>
+<script src="dist/common.min.js"></script>
+<!-- <script src="_scripts/common.js"></script> -->
+<!-- <script src="_scripts/vue.js"></script> -->
+<script src="dist/vue.min.js"></script>
 </body>
 </html>
